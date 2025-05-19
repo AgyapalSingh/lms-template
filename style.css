@@ -292,10 +292,19 @@ header {
 /* Management contact */
 
 .ag-lms-management-poc {
-  height: 200px;
+  min-height: 200px;
   padding: 0 10%;
   background-color: var(--bg-secondary-color);
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+  .ag-lms-management-poc {
+    padding-top: 20px;
+    padding-bottom: 20px;
+   flex-direction: column;
+   gap: 20px;
+  }
 }
