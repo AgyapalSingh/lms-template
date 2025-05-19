@@ -61,6 +61,24 @@ header {
   -webkit-backdrop-filter: blur(10px);
 }
 
+.ag-lms-headers-btn {
+  display: flex;
+  gap: 20px;
+}
+
+.ag-lms-user-settings-btn {
+  text-decoration: none;
+  background-color: var(--bg-primary-color);
+  width: 80px;
+  height: 30px;
+  color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
 .ag-lms-login-btn {
   text-decoration: none;
   background-color: var(--bg-color);
@@ -72,6 +90,7 @@ header {
   align-items: center;
   border-radius: 5px;
   font-size: 14px;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
@@ -254,15 +273,12 @@ header {
   }
 }
 
-
 /* OPT-In courses */
-
 
 .ag-lms-opt-in-courses {
   padding: 0 10%;
   min-height: 500px;
   display: flex;
-  
 }
 
 @media screen and (max-width: 768px) {
@@ -271,4 +287,15 @@ header {
     flex-direction: column;
     padding: 0 5%;
   }
+}
+
+/* Management contact */
+
+.ag-lms-management-poc {
+  height: 200px;
+  padding: 0 10%;
+  background-color: var(--bg-secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
