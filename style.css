@@ -43,7 +43,7 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-a{
+a {
   text-decoration: none;
   color: var(--bg-color);
 }
@@ -479,5 +479,64 @@ header {
   .ag-lms-active-courses-container {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+}
+
+/* Current Course Pages */
+.ag-lms-current-course-container {
+  display: flex;
+  flex-direction: row;
+  padding: 0 10%;
+  gap: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.ag-lms-current-course-live-data {
+  width: 70%;
+  overflow: hidden;
+}
+
+.ag-lms-current-course-live-data img {
+  width: 100%;
+}
+
+aside {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ag-lms-current-course-content-card {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid var(--bg-secondary-color);
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.ag-lms-current-course-content-card h2 {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+aside img {
+  height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .ag-lms-current-course-container {
+    flex-direction: column;
+    padding: 0 5%;
+  }
+  .ag-lms-current-course-live-data {
+    width: 100%;
+    overflow: hidden;
+  }
+  aside {
+    width: 100%;
   }
 }
