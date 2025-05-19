@@ -112,6 +112,14 @@ form input {
   font-size: 14px;
   cursor: pointer;
 }
+
+
+@media screen and (max-width: 768px) {
+ .ag-lms-user-login {
+  padding: 0;
+}
+}
+
 /*  Header */
 
 header {
