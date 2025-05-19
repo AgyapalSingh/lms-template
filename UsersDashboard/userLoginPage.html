@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="img/Favicon.png" type="image/x-icon" />
     <title>LMS | By Agyapal Singh</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,24 +15,34 @@
   </head>
   <body>
     <header>
-      <a href="/#"
+      <a href="/index.html"
         ><img src="/img/UMK_LOGO.png" alt="Unimarck Pharma Ltd." height="60px"
       /></a>
     </header>
 
-    <main class="ag-lms-home-container">
-      <a href="/UsersDashboard/userHomePage.html">Link for User Dashboard Template →</a>
-      <a href="/UsersDashboard/user.html"
-        >Link for local Admin Dashboard Template →</a
-      >
-      <a href="/UsersDashboard/user.html"
-        >Link for Global Admin Dashboard Template →</a
-      >
+    <main>
+      <div class="ag-lms-user-login">
+        <form>
+          <div class="ag-lms-user-login-form">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Enter your username"
+              required
+            />
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+        </form>
+      </div>
     </main>
-    <div class="ag-lms-footer-content">
-      <p>Designed by Agyapal Singh</p>
-      <a href="mailto:web@unimarckpharma.com">web@unimarckpharma.com</a>
-    </div>
-
   </body>
 </html>

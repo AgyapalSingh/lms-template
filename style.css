@@ -67,6 +67,30 @@ body {
   background-color: var(--bg-secondary-color);
   height: 100px;
 }
+
+/* User Homepage */
+.ag-lms-page-login-btn{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+}
+
+/* User Login Page */
+.ag-lms-user-login{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+   padding: 0 10%;
+  height: 70vh;
+}
+
+.ag-lms-user-login form .ag-lms-user-login-form{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
 /*  Header */
 
 header {
