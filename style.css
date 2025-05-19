@@ -83,6 +83,7 @@ body {
   justify-content: center;
    padding: 0 10%;
   height: 70vh;
+  gap: 20px;
 }
 
 .ag-lms-user-login form .ag-lms-user-login-form{
@@ -91,6 +92,30 @@ body {
   gap: 5px;
 }
 
+form input{
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-bottom: 1px solid var(--bg-secondary-color);
+  outline: none;
+  padding-left: 10px;
+  font-family: var(--primary-font-family);
+}
+
+
+.ag-lms-user-login a{
+  text-decoration: none;
+  background-color: var(--bg-color);
+  width: 80px;
+  height: 30px;
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
 /*  Header */
 
 header {
