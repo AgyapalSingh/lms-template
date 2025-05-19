@@ -1,0 +1,274 @@
+/* 
+@media screen and (min-width: 1281px) and (max-width: 1536px) {
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+}
+
+@media screen and (max-width: 480px) {
+} 
+*/
+
+:root {
+  --bg-color: #17153b;
+  --bg-primary-color: #ffffff;
+  --bg-secondary-color: #ebebeb;
+  --text-color: #ffffff;
+  --tex-color-secondary: #cccccc;
+  --hover-color: #4d4d4d;
+  --highligter-color: rgb(0, 255, 213);
+  --danger-color: red;
+
+  --primary-font-family: "Poppins", sans-serif;
+  --secondary-font-family: "Ancizar Sans", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/*  Header */
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10%;
+  position: sticky;
+  top: 0;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+  background-color: var(--text-color);
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.ag-lms-login-btn {
+  text-decoration: none;
+  background-color: var(--bg-color);
+  width: 80px;
+  height: 30px;
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    padding: 0 2%;
+  }
+}
+
+/* LMS About */
+
+.ag-lms-about {
+  padding: 0 10%;
+  height: 70vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.ag-lms-about-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.ag-lms-about-title {
+  font-size: 48px;
+  font-family: var(--secondary-font-family);
+  color: var(--bg-color);
+  font-weight: 500;
+}
+
+.ag-lms-about-info {
+  font-size: 18px;
+  font-family: var(--primary-font-family);
+  color: var(--hover-color);
+}
+
+.ag-lms-about-right {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  height: 100%;
+}
+
+.ag-lms-about-right img {
+  height: 80%;
+  width: 80%;
+  object-fit: cover;
+  clip-path: polygon(100% 0, 100% 55%, 100% 100%, 18% 100%, 0% 50%, 15% 0);
+}
+
+@media screen and (max-width: 768px) {
+  .ag-lms-about {
+    grid-template-columns: 1fr;
+    padding: 0 5%;
+  }
+
+  .ag-lms-about-title {
+    font-size: 24px;
+  }
+
+  .ag-lms-about-info {
+    font-size: 14px;
+  }
+
+  .ag-lms-about-right {
+    justify-content: center;
+  }
+  .ag-lms-about-right img {
+    height: 80%;
+    width: 80%;
+    clip-path: polygon(81% 0, 100% 50%, 87% 100%, 0% 100%, 0 50%, 0% 0%);
+  }
+}
+
+/* LMS Active courses */
+.ag-lms-active-courses {
+  padding: 0 10%;
+  min-height: 500px;
+  display: flex;
+  background-color: var(--bg-secondary-color);
+}
+
+.ag-lms-active-courses-header {
+  width: 30%;
+}
+
+.ag-lms-active-courses-title {
+  font-size: 32px;
+  font-family: var(--secondary-font-family);
+  font-weight: 500;
+  padding-top: 30px;
+}
+
+.ag-lms-active-courses-cards {
+  width: 70%;
+  height: 450px;
+  padding-top: 30px;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  gap: 20px;
+}
+
+.ag-lms-active-courses-cards::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+}
+.ag-lms-active-courses-cards::-webkit-scrollbar-track {
+  border: none !important;
+}
+
+.ag-lms-active-courses-cards::-webkit-scrollbar-thumb {
+  background: var(--tex-color-secondary);
+  cursor: pointer;
+}
+
+.ag-lms-active-courses-card {
+  height: 400px;
+  width: 300px;
+  flex-shrink: 0;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--bg-primary-color);
+}
+
+.ag-lms-active-courses-card-info {
+  background-color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 80%;
+}
+
+.ag-lms-active-courses-card-info img {
+  width: 100%;
+}
+
+.ag-lms-active-courses-card-title {
+  font-size: 18px;
+  padding: 0 5px;
+}
+
+.ag-lms-active-courses-card-description {
+  font-size: 14px;
+  padding: 0 5px;
+}
+
+.ag-lms-active-courses-progress {
+  font-size: 14px;
+  padding: 0 5px;
+  color: var(--hover-color);
+  text-align: end;
+}
+.ag-lms-active-courses-card-button {
+  height: 40px;
+  width: 100%;
+  outline: none;
+  border: none;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  cursor: pointer;
+  font-family: var(--primary-font-family);
+}
+
+@media screen and (max-width: 768px) {
+  .ag-lms-active-courses {
+    display: flex;
+    flex-direction: column;
+    padding: 0 5%;
+  }
+
+  .ag-lms-active-courses-header {
+    width: 100%;
+  }
+  .ag-lms-active-courses-cards {
+    width: 100%;
+  }
+}
+
+
+/* OPT-In courses */
+
+
+.ag-lms-opt-in-courses {
+  padding: 0 10%;
+  min-height: 500px;
+  display: flex;
+  
+}
+
+@media screen and (max-width: 768px) {
+  .ag-lms-opt-in-courses {
+    display: flex;
+    flex-direction: column;
+    padding: 0 5%;
+  }
+}
