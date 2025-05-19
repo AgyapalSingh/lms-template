@@ -245,9 +245,30 @@ header {
 /* LMS Active courses */
 .ag-lms-active-courses {
   padding: 0 10%;
-  min-height: 500px;
+  min-height: 550px;
   display: flex;
   background-color: var(--bg-secondary-color);
+  position: relative;
+}
+.ag-lms-sell-btn{
+  position: absolute;
+  bottom: 4%;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.ag-lms-sell-btn a{
+  text-decoration: none;
+  background-color: var(--bg-color);
+  width: 80px;
+  height: 30px;
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
 }
 
 .ag-lms-active-courses-header {
@@ -340,6 +361,7 @@ header {
     display: flex;
     flex-direction: column;
     padding: 0 5%;
+     min-height: 600px;
   }
 
   .ag-lms-active-courses-header {
