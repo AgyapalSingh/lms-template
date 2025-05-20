@@ -540,3 +540,25 @@ aside img {
     width: 100%;
   }
 }
+
+
+
+/* LOCAL ADMIN DASHBOARD */
+.ag-lms-local-admin-dash{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10%;
+  gap: 20px;
+  min-height: 30vh;
+}
+
+.ag-lms-local-admin-title{
+  font-size: 32px;
+  font-family: var(--secondary-font-family);
+  font-weight: 500;
+}
+
+.ag-lms-local-admin-info{
+
+}
