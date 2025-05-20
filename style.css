@@ -590,31 +590,39 @@ aside img {
   padding: 0 10%;
   gap: 20px;
   min-height: 30vh;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
-.ag-lms-local-admin-trainees h2{
+.ag-lms-local-admin-trainees h2 {
   font-size: 32px;
   font-family: var(--secondary-font-family);
   font-weight: 500;
 }
+.table-container {
+  overflow-x: auto;
+  width: 100%;
+}
 
 table {
-    width: 100%;
-    border-collapse: collapse;
-  }
+  width: 100%;
+  border-collapse: collapse;
+}
 
-  th, td {
-    border: 1px solid var(--bg-color);
-    padding: 8px;
-    text-align: left;
-  }
+th,
+td {
+  border: 1px solid var(--bg-color);
+  padding: 8px;
+  text-align: left;
+  white-space: nowrap;
+}
 
-  thead {
-    background-color: var(--bg-secondary-color);
-  }
+thead {
+  background-color: var(--bg-secondary-color);
+}
 
-  .ag-lms-local-admin-trainees-btn{
-    text-decoration: none;
+.ag-lms-local-admin-trainees-btn {
+  text-decoration: none;
   background-color: var(--bg-color);
   width: 180px;
   height: 30px;
@@ -628,4 +636,19 @@ table {
   border: none;
   outline: none;
   font-family: var(--primary-font-family);
+}
+
+@media screen and (max-width: 768px) {
+  .ag-lms-local-admin-dash {
+    padding: 0 5%;
   }
+  .ag-lms-local-admin-cta {
+    padding: 0 5%;
+  }
+  .ag-lms-local-admin-cta button {
+    font-size: 16px;
+  }
+  .ag-lms-local-admin-trainees {
+    padding: 0 5%;
+  }
+}
