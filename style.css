@@ -501,6 +501,14 @@ header {
   width: 100%;
 }
 
+.ag-lms-current-course-live-data-info{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100px;
+  align-items:end;
+}
+
 aside {
   width: 30%;
   display: flex;
