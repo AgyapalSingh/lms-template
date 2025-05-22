@@ -576,7 +576,10 @@ aside img {
   background-color: var(--bg-secondary-color);
 }
 
-.ag-lms-local-admin-cta button {
+.ag-lms-local-admin-cta a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 500px;
   height: 200px;
   font-family: var(--primary-font-family);
@@ -659,4 +662,23 @@ thead {
   .ag-lms-local-admin-trainees {
     padding: 0 5%;
   }
+}
+
+
+/* LocalAdminAllCourses */
+
+td a{
+  text-decoration: none;
+  background-color: var(--bg-color);
+  width: 180px;
+  height: 30px;
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  font-family: var(--primary-font-family);
 }
