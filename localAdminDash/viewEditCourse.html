@@ -29,40 +29,12 @@
 
     <main>
       <div class="ag-lms-local-admin-trainees">
-        <h2>Edit/Add Course</h2>
-        <div class="table-container">
-          <table>
-            <thead>
-              <tr>
-                <th>Sr. No.</th>
-                <th>Course Name</th>
-                <th>View / Edit</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>Course 1 Lorem ipsum dolor</td>
-                <td><a href="/localAdminDash/viewEditCourse.html">View / Edit</a></td>
-              </tr>
+        <h2>Course Name</h2>
 
-              <tr>
-                <td>2</td>
-                <td>Course 2</td>
-
-                <td><a href="">View / Edit</a></td>
-              </tr>
-
-              <tr>
-                <td>3</td>
-                <td>Course 3</td>
-
-                <td><a href="">View / Edit</a></td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="ag-lms-save-cancel-btn">
+          <a class="ag-lms-add-course-form-save" href=""> Add VideoCourse</a>
+          <a class="ag-lms-add-course-form-cancel" href=""> Add MCQ</a>
         </div>
-        <a class="ag-lms-local-admin-trainees-btn" href="">Add New Course</a>
 
         <div class="ag-lms-add-course-form">
           <div class="">
@@ -72,7 +44,14 @@
                   type="text"
                   id="username"
                   name="username"
-                  placeholder="Enter Course Name"
+                  placeholder="Enter Video Name"
+                  required
+                />
+                <input
+                  type="file"
+                  id="username"
+                  name="username"
+                  placeholder="Enter Video Name"
                   required
                 />
               </div>
