@@ -12,6 +12,57 @@
       href="https://fonts.googleapis.com/css2?family=Ancizar+Sans:ital,wght@0,100..1000;1,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <style>
+      .quiz-container {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .question-block {
+        background: #fafafa;
+        border: 1px solid #ddd;
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+      }
+
+      .question-block input[type="text"],
+      .question-block textarea,
+      .question-block select {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        font-size: 14px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      .add-option,
+      .add-question,
+      .remove-question {
+        color: #1a73e8;
+        cursor: pointer;
+        font-size: 14px;
+        display: inline-block;
+        margin-top: 5px;
+      }
+
+      .save-cancel-btns {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 14px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -37,6 +88,7 @@
           <a class="ag-lms-add-course-form-del" href=""> Delete Course</a>
         </div>
 
+        <h3>Video</h3>
         <div class="ag-lms-add-course-form">
           <div class="">
             <form>
@@ -62,6 +114,22 @@
               </div>
             </form>
           </div>
+        </div>
+
+        <div class="quiz-container">
+          <h3>QUIZ</h3>
+          <form id="quiz-form">
+            <div id="questions-container"></div>
+            <div><span class="add-question">+ Add Question</span></div>
+            <div class="save-cancel-btns">
+              <button type="submit" class="ag-lms-add-course-form-save">
+                Save
+              </button>
+              <button type="button" class="ag-lms-add-course-form-cancel">
+                Cancel
+              </button>
+            </div>
+          </form>
         </div>
 
         <div class="ag-lms-local-admin-trainees-table">
@@ -91,7 +159,91 @@
               </tr>
             </tbody>
           </table>
+        </div>
       </div>
     </main>
   </body>
 </html>
+
+<script>
+  const questionsContainer = document.getElementById("questions-container");
+  const addQuestionBtn = document.querySelector(".add-question");
+  let questionCount = 0;
+
+  function createQuestionBlock(index) {
+    const block = document.createElement("div");
+    block.className = "question-block";
+    block.dataset.index = index;
+
+    block.innerHTML = `
+        <input type="text" name="question${index}" placeholder="Enter your question" required />
+        <select name="type${index}" class="question-type">
+          <option value="short">Short Answer</option>
+          <option value="paragraph">Paragraph</option>
+          <option value="yesno">Yes/No</option>
+          <option value="mcq">Multiple Choice</option>
+        </select>
+        <div class="answer-fields"></div>
+        <span class="remove-question" style="float: right;">Remove</span>
+      `;
+
+    const answerFields = block.querySelector(".answer-fields");
+    const typeSelector = block.querySelector(".question-type");
+    const removeBtn = block.querySelector(".remove-question");
+
+    updateAnswerFields(answerFields, "short", index);
+
+    typeSelector.addEventListener("change", (e) => {
+      updateAnswerFields(answerFields, e.target.value, index);
+    });
+
+    removeBtn.addEventListener("click", () => {
+      block.remove();
+    });
+
+    return block;
+  }
+
+  function updateAnswerFields(container, type, index) {
+    container.innerHTML = "";
+    if (type === "short") {
+      container.innerHTML = `<input type="text" name="answer${index}" placeholder="Short answer"  />`;
+    } else if (type === "paragraph") {
+      container.innerHTML = `<textarea name="answer${index}" placeholder="Long answer" rows="4" ></textarea>`;
+    } else if (type === "yesno") {
+      container.innerHTML = `
+          <label><input type="radio" name="answer${index}" value="Yes" > Yes</label>
+          <label><input type="radio" name="answer${index}" value="No" > No</label>
+        `;
+    } else if (type === "mcq") {
+      container.innerHTML = `
+          <input type="text" name="answer${index}_option[]" placeholder="Option 1"  />
+          <input type="text" name="answer${index}_option[]" placeholder="Option 2"  />
+          <span class="add-option">+ Add Option</span>
+        `;
+
+      const addOptionBtn = container.querySelector(".add-option");
+      addOptionBtn.addEventListener("click", () => {
+        const input = document.createElement("input");
+        input.type = "text";
+        input.name = `answer${index}_option[]`;
+        input.placeholder = `Option ${
+          container.querySelectorAll("input").length + 1
+        }`;
+        input.required = true;
+        container.insertBefore(input, addOptionBtn);
+      });
+    }
+  }
+
+  addQuestionBtn.addEventListener("click", () => {
+    const block = createQuestionBlock(questionCount++);
+    questionsContainer.appendChild(block);
+  });
+
+  document.getElementById("quiz-form").addEventListener("submit", (e) => {
+    e.preventDefault();
+  });
+
+  addQuestionBtn.click();
+</script>
