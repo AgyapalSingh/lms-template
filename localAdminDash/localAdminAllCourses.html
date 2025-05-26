@@ -30,12 +30,15 @@
     <main>
       <div class="ag-lms-local-admin-trainees">
         <h2>Edit/Add Course</h2>
+        <a class="ag-lms-local-admin-trainees-btn" href="">Add New Course</a>
         <div class="table-container">
           <table>
             <thead>
               <tr>
                 <th>Sr. No.</th>
                 <th>Course Name</th>
+                <th>Course Description</th>
+                <th>Date of Posting</th>
                 <th>View / Edit</th>
               </tr>
             </thead>
@@ -43,26 +46,35 @@
               <tr>
                 <td>1</td>
                 <td>Course 1 Lorem ipsum dolor</td>
-                <td><a href="/localAdminDash/viewEditCourse.html">View / Edit</a></td>
+                <td>Course Description</td>
+                <td>23/05/2025</td>
+                <td>
+                  <a href="/localAdminDash/viewEditCourse.html">View / Edit</a>
+                </td>
               </tr>
 
               <tr>
                 <td>2</td>
                 <td>Course 2</td>
-
-                <td><a href="">View / Edit</a></td>
+                <td>Course Description</td>
+                <td>23/05/2025</td>
+                <td>
+                  <a href="/localAdminDash/viewEditCourse.html">View / Edit</a>
+                </td>
               </tr>
 
               <tr>
                 <td>3</td>
                 <td>Course 3</td>
-
-                <td><a href="">View / Edit</a></td>
+                <td>Course Description</td>
+                <td>23/05/2025</td>
+                <td>
+                  <a href="/localAdminDash/viewEditCourse.html">View / Edit</a>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
-        <a class="ag-lms-local-admin-trainees-btn" href="">Add New Course</a>
 
         <div class="ag-lms-add-course-form">
           <div class="">
@@ -73,6 +85,13 @@
                   id="username"
                   name="username"
                   placeholder="Enter Course Name"
+                  required
+                />
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  placeholder="Enter Course Description"
                   required
                 />
               </div>
